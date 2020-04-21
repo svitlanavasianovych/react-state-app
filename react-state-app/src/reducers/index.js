@@ -10,17 +10,14 @@ export default (state = initialState, action) => {
             return Object.assign({}, state, {
                 dog: state.dog + 1
             })
-
         case 'VOTE_CAT':
             return Object.assign({}, state, {
                 cat: state.cat + 1
             })
-
         case 'VOTE_PARROT':
             return Object.assign({}, state, {
                 parrot: state.parrot + 1
             })
-
         default:
             return state
     }
