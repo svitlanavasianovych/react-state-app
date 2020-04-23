@@ -34,7 +34,7 @@ class App extends Component {
                 src="dog.jpeg"
                 height="96"
                 alt="dog"
-                onClick={this.voteDog}
+                onClick={this.handleVoteDog}
               ></img>
             </div>
             <div className="col-sm">
@@ -42,7 +42,7 @@ class App extends Component {
                 src="cat.jpeg"
                 height="96"
                 alt="cat"
-                onClick={this.voteCat}
+                onClick={this.handleVoteCat}
               ></img>
             </div>
             <div className="col-sm">
@@ -50,7 +50,7 @@ class App extends Component {
                 src="parrot.jpeg"
                 height="96"
                 alt="parrot"
-                onClick={this.voteParrot}
+                onClick={this.handleVoteParrot}
               ></img>
             </div>
           </div>
