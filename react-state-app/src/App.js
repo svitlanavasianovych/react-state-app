@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { voteDog, voteCat, voteParrot } from "./actions";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.store = this.props.store;
+  }
+  handleVoteDog = () => {
+    this.store.dispatch(voteDog());
+  };
+
+  handleVoteCat = () => {
+    this.store.dispatch(voteCat());
+  };
+
+  handleVoteParrot = () => {
+    this.store.dispatch(voteParrot());
+  };
+
+  render() {
+    return (
+      <div>
+        <div className="jumbotron" style={{ textAlign: "center" }}>
+          <img src="main_logo.jpeg" height="96" alt="animalLogo"></img>
+          <h2>What is your favorite animal for home?</h2>
+          <h4>Click on it below to vote!</h4>
+          <br />
+          <div className="row">
+            <div className="col-xs-offset-3 col-sm">
+              <img
+                src="dog.jpeg"
+                height="96"
+                alt="dog"
+                onClick={this.voteDog}
+              ></img>
+            </div>
+            <div className="col-sm">
+              <img
+                src="cat.jpeg"
+                height="96"
+                alt="cat"
+                onClick={this.voteCat}
+              ></img>
+            </div>
+            <div className="col-sm">
+              <img
+                src="parrot.jpeg"
+                height="96"
+                alt="parrot"
+                onClick={this.voteParrot}
+              ></img>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

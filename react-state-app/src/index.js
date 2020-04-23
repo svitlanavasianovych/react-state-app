@@ -4,14 +4,13 @@ import { createStore } from 'redux';
 import './index.css';
 import App from './App';
 import myApp from './reducers';
-import * as serviceWorker from './serviceWorker';
 
 let store = createStore(myApp);
 
 function render () {
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <App store={store}/>
     </React.StrictMode>,
     document.getElementById('root')
   );
@@ -20,5 +19,3 @@ function render () {
 store.subscribe(render);
 
 render();
-
-serviceWorker.unregister();
